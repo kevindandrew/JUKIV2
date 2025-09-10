@@ -55,6 +55,13 @@ export default function JukiCreacionesHome() {
     setMounted(true);
   }, []);
 
+  // Scroll al top cada vez que cambia la vista principal
+  useEffect(() => {
+    if (mounted) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [currentView, mounted]);
+
   const toggleFavorite = (id: number) => {
     setFavorites((prev) =>
       prev.includes(id) ? prev.filter((fav) => fav !== id) : [...prev, id]
