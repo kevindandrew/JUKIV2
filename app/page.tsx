@@ -120,6 +120,106 @@ export default function JukiCreacionesHome() {
       rating: 5,
       category: "flores-individuales",
     },
+    // Nuevos productos agregados
+    {
+      id: 10,
+      name: "Ramo de Rosas Rojas Premium",
+      price: "Bs 70.00",
+      image: "/productos/WhatsApp Image 2025-09-17 at 11.25.42 PM.jpeg",
+      description:
+        "Hermoso ramo de rosas rojas eternas con envoltura elegante y presentación de lujo",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+    {
+      id: 11,
+      name: "Bouquet Mixto Colorido",
+      price: "Bs 60.00",
+      image: "/productos/WhatsApp Image 2025-09-17 at 11.25.44 PM.jpeg",
+      description:
+        "Ramo mixto con flores de colores vibrantes y papel decorativo especial",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+    {
+      id: 12,
+      name: "Ramo de Girasoles Deluxe",
+      price: "Bs 65.00",
+      image: "/productos/WhatsApp Image 2025-09-17 at 11.25.44 PM (1).jpeg",
+      description:
+        "Girasoles grandes con papel kraft y detalles especiales artesanales",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+    {
+      id: 13,
+      name: "Bouquet Rosa y Blanco Elegante",
+      price: "Bs 55.00",
+      image: "/productos/WhatsApp Image 2025-09-17 at 11.25.44 PM (2).jpeg",
+      description:
+        "Elegante combinación de rosas rosas y blancas con envoltura refinada",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+    {
+      id: 14,
+      name: "Ramo de Rosas Pastel",
+      price: "Bs 58.00",
+      image: "/productos/WhatsApp Image 2025-09-17 at 11.25.44 PM (3).jpeg",
+      description:
+        "Delicado ramo con rosas en tonos pastel suaves y románticos",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+    {
+      id: 15,
+      name: "Bouquet Compacto Multicolor",
+      price: "Bs 45.00",
+      image: "/productos/WhatsApp Image 2025-09-17 at 11.25.44 PM (4).jpeg",
+      description:
+        "Ramo pequeño pero vibrante con múltiples colores y presentación encantadora",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+    {
+      id: 16,
+      name: "Ramo Premium Dorado",
+      price: "Bs 75.00",
+      image: "/productos/WhatsApp Image 2025-09-17 at 11.25.44 PM (5).jpeg",
+      description:
+        "Ramo exclusivo con detalles dorados y presentación de lujo premium",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+    {
+      id: 17,
+      name: "Bouquet Romántico Rojo",
+      price: "Bs 68.00",
+      image: "/productos/WhatsApp Image 2025-09-17 at 11.25.44 PM (6).jpeg",
+      description:
+        "Ramo romántico perfecto para ocasiones especiales y declaraciones de amor",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+    {
+      id: 18,
+      name: "Ramo Elegante Combinado",
+      price: "Bs 62.00",
+      image: "/productos/WhatsApp Image 2025-09-17 at 11.25.44 PM (7).jpeg",
+      description:
+        "Combinación elegante de diferentes tipos de flores con presentación sofisticada",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
   ];
 
   const tarjetas = [
@@ -487,8 +587,8 @@ export default function JukiCreacionesHome() {
                   <Image
                     src={
                       theme === "dark"
-                        ? "/images/juki-sin-fondo-dark.png"
-                        : "/images/juki-logo-ligth.png"
+                        ? "/images/dark_mode.png"
+                        : "/images/ligth_mode.png"
                     }
                     alt="Juki Creaciones Logo"
                     width={120}
@@ -1011,6 +1111,124 @@ export default function JukiCreacionesHome() {
                   </Button>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Quiénes Somos Section - Solo se muestra en vista home */}
+      {currentView === "home" && (
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-serif font-black text-foreground mb-4">
+                  Quiénes Somos
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Conoce la historia detrás de cada creación artesanal
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-2xl font-serif font-bold text-foreground mb-4">
+                      Nuestra Historia
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      Juki Creaciones nació del amor por los detalles únicos y
+                      la pasión por crear momentos especiales. Desde La Paz,
+                      Bolivia, nos dedicamos a elaborar regalos manuales que
+                      transmitan emociones y creen recuerdos inolvidables.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Cada pieza es cuidadosamente diseñada y elaborada a mano,
+                      garantizando que cada regalo sea tan especial como la
+                      persona que lo recibe.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-2xl font-serif font-bold text-foreground mb-4">
+                      Nuestra Misión
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Crear productos artesanales únicos que expresen
+                      sentimientos auténticos y fortalezcan los lazos entre las
+                      personas. Creemos que cada detalle importa y que los
+                      regalos hechos con amor tienen el poder de transformar
+                      momentos ordinarios en extraordinarios.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-6 bg-primary/5 rounded-lg">
+                      <div className="text-3xl font-bold text-primary mb-2">
+                        100%
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Artesanal
+                      </div>
+                    </div>
+                    <div className="text-center p-6 bg-primary/5 rounded-lg">
+                      <div className="text-3xl font-bold text-primary mb-2">
+                        9
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Departamentos
+                      </div>
+                    </div>
+                    <div className="text-center p-6 bg-primary/5 rounded-lg">
+                      <div className="text-3xl font-bold text-primary mb-2">
+                        ✨
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Únicos
+                      </div>
+                    </div>
+                    <div className="text-center p-6 bg-primary/5 rounded-lg">
+                      <div className="text-3xl font-bold text-primary mb-2">
+                        💝
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Con Amor
+                      </div>
+                    </div>
+                  </div>
+
+                  <Card className="bg-gradient-to-br from-primary/10 to-secondary/20">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <Heart className="h-6 w-6 text-primary" />
+                        <h4 className="font-serif font-bold text-foreground">
+                          ¿Por qué elegirnos?
+                        </h4>
+                      </div>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li className="flex items-center gap-2">
+                          <Star className="h-4 w-4 text-primary" />
+                          Productos 100% artesanales y personalizados
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Star className="h-4 w-4 text-primary" />
+                          Envíos a todos los departamentos de Bolivia
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Star className="h-4 w-4 text-primary" />
+                          Atención personalizada por WhatsApp
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <Star className="h-4 w-4 text-primary" />
+                          Cada detalle hecho con amor y dedicación
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
