@@ -39,19 +39,24 @@ import {
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { useTheme } from "next-themes";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function JukiCreacionesHome() {
   const { theme } = useTheme();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   const [favorites, setFavorites] = useState<number[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("todos");
   const [mounted, setMounted] = useState(false);
   const [leadForm, setLeadForm] = useState({ name: "", phone: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [currentView, setCurrentView] = useState<
-    "home" | "stock" | "catalog" | "category"
-  >("home");
-  const [selectedCatalogCategory, setSelectedCatalogCategory] =
-    useState<string>("");
+
+  // Obtener vista actual de la URL
+  const currentView =
+    (searchParams.get("view") as "home" | "stock" | "catalog" | "category") ||
+    "home";
+  const selectedCatalogCategory = searchParams.get("category") || "";
 
   useEffect(() => {
     setMounted(true);
@@ -63,6 +68,20 @@ export default function JukiCreacionesHome() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [currentView, mounted]);
+
+  // Funciones de navegación que usan el router
+  const navigateToView = (view: string, category?: string) => {
+    const params = new URLSearchParams();
+    params.set("view", view);
+    if (category) {
+      params.set("category", category);
+    }
+    router.push(`?${params.toString()}`);
+  };
+
+  const navigateToHome = () => {
+    router.push("/");
+  };
 
   const toggleFavorite = (id: number) => {
     setFavorites((prev) =>
@@ -536,10 +555,7 @@ export default function JukiCreacionesHome() {
     return (
       <Card
         className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-        onClick={() => {
-          setSelectedCatalogCategory(category.id);
-          setCurrentView("category");
-        }}
+        onClick={() => navigateToView("category", category.id)}
       >
         <CardHeader className="text-center">
           <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit">
@@ -668,7 +684,7 @@ export default function JukiCreacionesHome() {
 
             <nav className="hidden md:flex items-center gap-6">
               <button
-                onClick={() => setCurrentView("home")}
+                onClick={() => navigateToHome()}
                 className={`transition-colors font-medium ${
                   theme === "dark"
                     ? "text-foreground hover:text-[#e3ca6e]"
@@ -798,7 +814,7 @@ export default function JukiCreacionesHome() {
                   <Button
                     size="lg"
                     className="w-full gap-2"
-                    onClick={() => setCurrentView("stock")}
+                    onClick={() => navigateToView("stock")}
                   >
                     <ShoppingBag className="h-5 w-5" />
                     Ver Productos Disponibles
@@ -825,7 +841,7 @@ export default function JukiCreacionesHome() {
                     size="lg"
                     variant="outline"
                     className="w-full gap-2 bg-transparent"
-                    onClick={() => setCurrentView("catalog")}
+                    onClick={() => navigateToView("catalog")}
                   >
                     <Grid3X3 className="h-5 w-5" />
                     Ver Catálogo Completo
@@ -852,7 +868,7 @@ export default function JukiCreacionesHome() {
                   Productos disponibles organizados por categorías
                 </p>
               </div>
-              <Button variant="outline" onClick={() => setCurrentView("home")}>
+              <Button variant="outline" onClick={() => navigateToHome()}>
                 Volver al Inicio
               </Button>
             </div>
@@ -899,7 +915,7 @@ export default function JukiCreacionesHome() {
                   Selecciona una categoría para ver todos los productos
                 </p>
               </div>
-              <Button variant="outline" onClick={() => setCurrentView("home")}>
+              <Button variant="outline" onClick={() => navigateToHome()}>
                 Volver al Inicio
               </Button>
             </div>
@@ -936,14 +952,11 @@ export default function JukiCreacionesHome() {
               <div className="flex gap-2">
                 <Button
                   variant="outline"
-                  onClick={() => setCurrentView("catalog")}
+                  onClick={() => navigateToView("catalog")}
                 >
                   Volver al Catálogo
                 </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => setCurrentView("home")}
-                >
+                <Button variant="outline" onClick={() => navigateToHome()}>
                   Inicio
                 </Button>
               </div>
@@ -962,7 +975,7 @@ export default function JukiCreacionesHome() {
                 </p>
                 <Button
                   variant="outline"
-                  onClick={() => setCurrentView("catalog")}
+                  onClick={() => navigateToView("catalog")}
                 >
                   Ver Otras Categorías
                 </Button>
@@ -1267,7 +1280,7 @@ export default function JukiCreacionesHome() {
               <ul className="space-y-2 text-muted-foreground">
                 <li>
                   <button
-                    onClick={() => setSelectedCategory("ramos-eternos")}
+                    onClick={() => navigateToView("category", "ramos-eternos")}
                     className="hover:text-primary transition-colors text-left"
                   >
                     Ramos Eternos
@@ -1275,7 +1288,9 @@ export default function JukiCreacionesHome() {
                 </li>
                 <li>
                   <button
-                    onClick={() => setSelectedCategory("tarjetas-regalo")}
+                    onClick={() =>
+                      navigateToView("category", "tarjetas-regalo")
+                    }
                     className="hover:text-primary transition-colors text-left"
                   >
                     Tarjetas de Regalo
@@ -1283,7 +1298,9 @@ export default function JukiCreacionesHome() {
                 </li>
                 <li>
                   <button
-                    onClick={() => setSelectedCategory("productos-novedosos")}
+                    onClick={() =>
+                      navigateToView("category", "productos-novedosos")
+                    }
                     className="hover:text-primary transition-colors text-left"
                   >
                     Productos Novedosos
