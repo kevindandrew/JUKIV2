@@ -105,14 +105,16 @@ export default function JukiCreacionesHome() {
     setIsSubmitting(false);
   };
 
-  const ramos = [
+  // Productos completos del catálogo real de Juki Creaciones
+  const allProducts = [
+    // RAMOS ETERNOS
     {
       id: 1,
-      name: "Ramo de Girasoles Eternos Premium",
-      price: "Bs 65.00",
+      name: "Ramo Buchón de Girasoles",
+      price: "BOB 250.00",
       image: "/images/sunflower-bouquet-premium.png",
       description:
-        "Hermoso ramo de girasoles decorativos con papel dorado y lazo naranja",
+        "19 girasoles pequeños • Una tarjetita de regalo • Diámetro de 60 cm",
       inStock: true,
       rating: 5,
       category: "ramos-eternos",
@@ -239,85 +241,535 @@ export default function JukiCreacionesHome() {
       rating: 5,
       category: "ramos-eternos",
     },
-  ];
 
-  const tarjetas = [
+    // RAMOS ETERNOS
+    {
+      id: 2,
+      name: "Ramo Buchón de Spiderman con flores de papel🕷️🕸️♥️",
+      price: "BOB 55.00",
+      image: "/images/spiderman-roses.png",
+      description:
+        "19 Rosas hechas con papel de color rojo • Envoltura con papel de Arroz o cartulina opcional • Detalle adicional ojos de Spiderman • Moño de listón",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+    {
+      id: 3,
+      name: "Ramo Girasol grande y rosas🌻🌹",
+      price: "BOB 90.00",
+      image: "/images/mixed-bouquet.png",
+      description:
+        "1 girasol grande • 11 rosas • Envoltura con papel coreano • 1 Mariposa • Diámetro del ramo 40 cm aprox.",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
     {
       id: 4,
-      name: "Librito con Canciones de Amor",
-      price: "Bs 25.00",
+      name: "Ramo Girasoles con mariposa 🌻🦋",
+      price: "BOB 65.00",
+      image: "/images/sunflower-bouquet.png",
+      description: "5 girasoles • Una mariposa • Papel coreano • Listón",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+    {
+      id: 5,
+      name: "Ramo Premium de Girasoles 🌻✨",
+      price: "BOB 80.00",
+      image: "/images/sunflower-bouquet-premium.png",
+      description: "7 girasoles • Una mariposa • Papel coreano • Listón",
+      inStock: true,
+      rating: 5,
+      category: "ramos-eternos",
+    },
+
+    // FLORES INDIVIDUALES
+    {
+      id: 6,
+      name: "Girasol mediano 🌻",
+      price: "BOB 25.00",
+      image: "/images/sunflower-mascot.png",
+      description:
+        "Altura 35 cm aprox. • Envoltura con Papel craft • Tarjeta con dedicatoria opcional",
+      inStock: true,
+      rating: 5,
+      category: "flores-individuales",
+    },
+    {
+      id: 7,
+      name: "Girasol presentación tarjeta �",
+      price: "BOB 25.00",
+      image: "/images/sunflower-mascot.png",
+      description:
+        "Girasol con sus pétalos de forma tipo ovalada • Tamaño de la tarjeta (30 x 18)cm • Mensaje personalizado en letras doradas",
+      inStock: true,
+      rating: 5,
+      category: "flores-individuales",
+    },
+    {
+      id: 8,
+      name: "Rosa eterna🌹",
+      price: "BOB 10.00",
+      image: "/placeholder.svg",
+      description:
+        "Rosa hecha de listón sin hojas • Envoltura papel craft • Altura 30 cm aprox.",
+      inStock: true,
+      rating: 5,
+      category: "flores-individuales",
+    },
+    {
+      id: 65,
+      name: "Girasol de Shreck con orejitas 🌱🌻❤️",
+      price: "BOB 25.00",
+      image: "/placeholder.svg",
+      description:
+        "Tamaño de la tarjeta (30×18) cm • Mensaje personalizado o frase la película",
+      inStock: true,
+      rating: 5,
+      category: "flores-individuales",
+    },
+    {
+      id: 66,
+      name: "Girasol pequeño 🌻",
+      price: "BOB 15.00",
+      image: "/images/sunflower-mascot.png",
+      description: "Altura 30 cm aprox. • Tarjeta con dedicatoria opcional",
+      inStock: true,
+      rating: 5,
+      category: "flores-individuales",
+    },
+    {
+      id: 67,
+      name: "Girasol de Shreck 🌻✨",
+      price: "BOB 25.00",
+      image: "/placeholder.svg",
+      description:
+        "Girasol mediano hecho de listón • Tarjeta de cartulina (tamaño 30 cm) • Se puede optar por un mensaje personalizado",
+      inStock: true,
+      rating: 5,
+      category: "flores-individuales",
+    },
+    {
+      id: 68,
+      name: "Girasol grande🌻",
+      price: "BOB 25.00",
+      image: "/images/sunflower-mascot.png",
+      description: "Girasol hecho de liston • Envoltura papel Craft",
+      inStock: true,
+      rating: 5,
+      category: "flores-individuales",
+    },
+
+    // LIBRITOS DE CANCIONES
+    {
+      id: 9,
+      name: "Ibuprofeno - Lasso (Librito de canciones ✨)",
+      price: "BOB 30.00",
       image: "/images/love-booklet.png",
       description:
-        "Librito artesanal con ilustraciones románticas y frases personalizadas",
+        "Tarjeta personalizada hecha de cartulina y tapa de cartón duplex. • Dimensión de (13× 10)cm • Forro Papel de arroz color negro • La tarjeta viene en un sobre de papel.",
       inStock: true,
       rating: 5,
       category: "libritos-canciones",
     },
     {
-      id: 5,
-      name: "Tarjeta Personalizada Premium",
-      price: "Bs 12.00",
-      image: "/tarjeta-artesanal-premium.png",
-      description: "Tarjeta hecha a mano con detalles únicos y personalizables",
+      id: 10,
+      name: "Alma Dinamita- Wos (Book- Song)✨❤️",
+      price: "BOB 45.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Tarjeta personalizada hecha de cartulina y tapa de cartón duplex. • Dimensión de (13× 10)cm • Forro Papel de arroz color negro • La tarjeta viene en un sobre de papel.",
       inStock: true,
       rating: 5,
-      category: "tarjetas-regalo",
+      category: "libritos-canciones",
     },
     {
-      id: 6,
-      name: "Set de Tarjetas Temáticas",
-      price: "Bs 25.00",
-      image: "/set-tarjetas-tematicas.png",
-      description: "Pack de 3 tarjetas con diferentes diseños temáticos",
-      inStock: false,
-      rating: 4,
-      category: "tarjetas-regalo",
+      id: 11,
+      name: "Somos - Majo y Dan ✨",
+      price: "BOB 30.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Tarjeta personalizada hecha de cartulina y tapa de cartón duplex. • Dimensión de (13× 10)cm • Forro Papel de arroz color negro • La tarjeta viene en un sobre de papel.",
+      inStock: true,
+      rating: 5,
+      category: "libritos-canciones",
     },
-  ];
+    {
+      id: 50,
+      name: "Nunca te Olvides - AirBag (Librito de canciones)",
+      price: "BOB 30.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Tarjeta personalizada hecha de cartulina y tapa de cartón duplex. • Dimensión de (13× 10)cm",
+      inStock: true,
+      rating: 5,
+      category: "libritos-canciones",
+    },
+    {
+      id: 51,
+      name: "Carencia de Cordura - Milo J 🌱✨",
+      price: "BOB 30.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Tarjeta personalizada hecha de cartulina y tapa de cartón duplex. • Dimensión de (13× 10)cm • Forro Papel de arroz color negro",
+      inStock: true,
+      rating: 5,
+      category: "libritos-canciones",
+    },
+    {
+      id: 52,
+      name: "Alma Dinamita - Wos (versión Snoopy)❤️😊",
+      price: "BOB 50.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Librito de Cartulina • Dimensión 13x10 cm • Con forro incluído y portada personalizada+ dedicatoria ✨ • Tapa de cartón Duplex",
+      inStock: true,
+      rating: 5,
+      category: "libritos-canciones",
+    },
+    {
+      id: 53,
+      name: "Cómo mi papá - Topo Gigio ❤️🎁✨",
+      price: "BOB 40.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Tarjeta personalizada hecha de cartulina y tapa de cartón duplex. • Dimensión de (13× 10)cm • Forro Papel a elección • Foto personalizada",
+      inStock: true,
+      rating: 5,
+      category: "libritos-canciones",
+    },
+    {
+      id: 54,
+      name: "Nunca Te Olvides - Airbag( versión Snoopy) 💜✨",
+      price: "BOB 45.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Librito de Cartulina • Dimensión 13x10 cm • Con forro incluído y portada personalizada+ dedicatoria ✨ • Tapa de cartón Duplex",
+      inStock: true,
+      rating: 5,
+      category: "libritos-canciones",
+    },
+    {
+      id: 55,
+      name: "Mi Héroe Favorito - Romeo Santos ❤️",
+      price: "BOB 60.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Tamaño (mitad de una hoja tamaño carta) • Base de cartulina • Tapa dura (duplex) • Forro papel de arroz • Adición de 2 fotos en la parte final de la tarjeta",
+      inStock: true,
+      rating: 5,
+      category: "libritos-canciones",
+    },
+    {
+      id: 56,
+      name: "Eres- Café Tacvba -/Pedazo de la canción♥️✨",
+      price: "BOB 25.00",
+      image: "/tarjeta-artesanal-premium.png",
+      description: "Tamaño 15 x 17 cm • Tapa Dura • Diseño personalizado",
+      inStock: true,
+      rating: 5,
+      category: "libritos-canciones",
+    },
+    {
+      id: 57,
+      name: "Soñé - Zoe ✨♥️",
+      price: "BOB 65.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Tamaño 14 x 16 cm • Hojas de Cartulina • Tapa Duplex con forro",
+      inStock: true,
+      rating: 5,
+      category: "libritos-canciones",
+    },
+    {
+      id: 58,
+      name: "Enculado- feet nsqk Yukun ✨",
+      price: "BOB 35.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Tarjeta de cartulina 10 x 13 cm • Tapa Duplex • Totalmente personalizable",
+      inStock: true,
+      rating: 5,
+      category: "libritos-canciones",
+    },
 
-  const productosNovedosos = [
+    // PLANTAS VS ZOMBIES
     {
-      id: 7,
-      name: "Planta vs Zombies Verde",
-      price: "Bs 35.00",
+      id: 12,
+      name: "Repetidora",
+      price: "BOB 60.00",
       image: "/images/plants-vs-zombies-green.png",
       description:
-        "Producto temático inspirado en Plants vs Zombies con cara tierna",
+        "Base esférica de plastaformo • Altura 28 cm aprox. • Maceta base de yeso(estuco)",
       inStock: true,
       rating: 5,
-      category: "productos-novedosos",
+      category: "plantas-vs-zombies",
     },
     {
-      id: 8,
-      name: "Planta Militar PvZ",
-      price: "Bs 40.00",
+      id: 13,
+      name: "Guisantralladora",
+      price: "BOB 70.00",
       image: "/images/plants-vs-zombies-military.png",
-      description: "Planta temática estilo militar con boina y accesorios",
+      description:
+        "Base esférica de plastaformo • Forrado con tela • Altura 28 cm aprox.",
+      inStock: true,
+      rating: 5,
+      category: "plantas-vs-zombies",
+    },
+    {
+      id: 14,
+      name: "Girasol de Plantas Vs Zombies 🌱",
+      price: "BOB 40.00",
+      image: "/images/sunflower-mascot.png",
+      description:
+        "Centro de girasol acolchado • Altura 28 cm aprox. • Maceta base de yeso(estuco)",
+      inStock: true,
+      rating: 5,
+      category: "plantas-vs-zombies",
+    },
+
+    // PRODUCTOS NOVEDOSOS
+    {
+      id: 15,
+      name: "Agenda Ahorradora",
+      price: "BOB 75.00",
+      image: "/placeholder.svg",
+      description:
+        "6 Sobres zipper • Una hoja de stickers para que planifiques tus gastos y ahorros. • Hojas para anotaciones • Hojas extra para organizarse • 3 hojas de Stickers decorativos. Disponible en color negro, crema y lila bebé",
       inStock: true,
       rating: 5,
       category: "productos-novedosos",
     },
-  ];
-
-  const productosTematizados = [
     {
-      id: 9,
-      name: "Ramo Spider-Man",
-      price: "Bs 75.00",
-      image: "/images/spiderman-roses.png",
-      description:
-        "Ramo de rosas rojas con máscara de Spider-Man, perfecto para fans",
+      id: 16,
+      name: "Porta llaves de Motomel",
+      price: "BOB 15.00",
+      image: "/placeholder.svg",
+      description: "Porta llaves temático de Motomel",
       inStock: true,
       rating: 5,
-      category: "productos-tematizados",
+      category: "productos-novedosos",
     },
-  ];
 
-  const allProducts = [
-    ...ramos,
-    ...tarjetas,
-    ...productosNovedosos,
-    ...productosTematizados,
+    // TARJETAS
+    {
+      id: 17,
+      name: "Camara Instagram",
+      price: "BOB 35.00",
+      image: "/tarjeta-artesanal-premium.png",
+      description:
+        "Camara con el lente que se abre y muestra la foto • Dimensión 12 x 12 (cm) • Una foto",
+      inStock: true,
+      rating: 5,
+      category: "tarjetas",
+    },
+    {
+      id: 18,
+      name: "Tarjeta Scrap",
+      price: "BOB 8.00",
+      image: "/set-tarjetas-tematicas.png",
+      description: "Tarjeta scrapbook personalizada",
+      inStock: true,
+      rating: 5,
+      category: "tarjetas",
+    },
+
+    // JOYERÍA Y ACCESORIOS
+    {
+      id: 19,
+      name: "Aretes Snoopy 💝✨",
+      price: "BOB 15.00",
+      image: "/placeholder.svg",
+      description: "Aretes temáticos de Snoopy",
+      inStock: true,
+      rating: 5,
+      category: "joyeria-accesorios",
+    },
+    {
+      id: 20,
+      name: "Aretes Stitch 💝✨",
+      price: "BOB 15.00",
+      image: "/placeholder.svg",
+      description: "Aretes temáticos de Stitch",
+      inStock: true,
+      rating: 5,
+      category: "joyeria-accesorios",
+    },
+
+    // SOMBREROS CHINOS
+    {
+      id: 21,
+      name: "Sombrero chino con Diseño",
+      price: "BOB 40.00",
+      image: "/placeholder.svg",
+      description:
+        "Único tamaño • Se puede elegir otro diseño, depende a la complejidad varia el precio",
+      inStock: true,
+      rating: 5,
+      category: "sombreros-chinos",
+    },
+    {
+      id: 22,
+      name: "Sombrero Chino (Sin diseño)",
+      price: "BOB 35.00",
+      image: "/placeholder.svg",
+      description: "Único tamaño",
+      inStock: true,
+      rating: 5,
+      category: "sombreros-chinos",
+    },
+
+    // SNOOPY
+    {
+      id: 23,
+      name: "Alma Dinamita - Wos (versión Snoopy)❤️😊",
+      price: "BOB 50.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Librito de Cartulina • Dimensión 13x10 cm • Con forro incluído y portada personalizada+ dedicatoria ✨ • Tapa de cartón Duplex",
+      inStock: true,
+      rating: 5,
+      category: "snoopy",
+    },
+    {
+      id: 24,
+      name: "Nunca Te Olvides - Airbag( versión Snoopy) 💜✨",
+      price: "BOB 45.00",
+      image: "/images/love-booklet.png",
+      description:
+        "Librito de Cartulina • Dimensión 13x10 cm • Con forro incluído y portada personalizada+ dedicatoria ✨ • Tapa de cartón Duplex",
+      inStock: true,
+      rating: 5,
+      category: "snoopy",
+    },
+    {
+      id: 25,
+      name: "Tarjeta Casita Snoopy",
+      price: "BOB 65.00",
+      image: "/placeholder.svg",
+      description:
+        "Dimensión aprox (tamaño cuaderno) • base Cartulina y duplex, dibujos impresos",
+      inStock: true,
+      rating: 5,
+      category: "snoopy",
+    },
+    {
+      id: 26,
+      name: "Tarjeta mediana Snoopy 💞🫶",
+      price: "BOB 45.00",
+      image: "/set-tarjetas-tematicas.png",
+      description:
+        "Dibujos escaneados impresos •Tamaño Carpeta •Espacios para llenado •Tapa dura •Base Cartulina. *Tarjeta con contenido (con letra ) a 70 Bs*",
+      inStock: true,
+      rating: 5,
+      category: "snoopy",
+    },
+    {
+      id: 27,
+      name: "Cuadro Arte en Filigrama SNOOPY GIRASOL �",
+      price: "BOB 50.00",
+      image: "/placeholder.svg",
+      description: "tamaño carpeta • tapa con plástico transparente",
+      inStock: true,
+      rating: 5,
+      category: "snoopy",
+    },
+
+    // TARJETAS CON MOVIMIENTO
+    {
+      id: 28,
+      name: "Eres- Café Tacvba -/Pedazo de la canción♥️✨",
+      price: "BOB 25.00",
+      image: "/tarjeta-artesanal-premium.png",
+      description: "Tamaño 15 x 17 cm • Tapa Dura • Diseño personalizado",
+      inStock: true,
+      rating: 5,
+      category: "tarjetas-con-movimiento",
+    },
+    {
+      id: 29,
+      name: "Mac Miller- Congratulations Snoopy❤️✨",
+      price: "BOB 135.00",
+      image: "/placeholder.svg",
+      description:
+        "Material: Cartulina • Dimensiones: 13x10 cm • Forro Tapa: Duplex y cartulina • Dibujos escaneados",
+      inStock: true,
+      rating: 5,
+      category: "tarjetas-con-movimiento",
+    },
+    {
+      id: 30,
+      name: "The Smiths 💿",
+      price: "BOB 45.00",
+      image: "/placeholder.svg",
+      description:
+        "Tamaño: 13x13 cm • Material; Cartulina • Cada página con interacción",
+      inStock: true,
+      rating: 5,
+      category: "tarjetas-con-movimiento",
+    },
+    {
+      id: 31,
+      name: "LUNA ZOE (Tamaño Cuaderno) 🌘🌛",
+      price: "BOB 125.00",
+      image: "/placeholder.svg",
+      description:
+        "Tamaño cuaderno • Material Cartulina • En tamaño de 10x13 cm mismo diseño al precio de 85 Bs",
+      inStock: true,
+      rating: 5,
+      category: "tarjetas-con-movimiento",
+    },
+
+    // CAJAS TEMATIZADAS
+    {
+      id: 32,
+      name: "Caja temática DUKI (Cumpleaños) 💜✨",
+      price: "BOB 65.00",
+      image: "/placeholder.svg",
+      description:
+        "Caja de cartón grueso 25x25 cm • Incluye dulces , snacks valor de 30 Bs • Incluye luces led • Todos los detalles son totalmente personalizables",
+      inStock: true,
+      rating: 5,
+      category: "cajas-tematizadas",
+    },
+
+    // PRODUCTOS QUE APARECEN EN MÚLTIPLES CATEGORÍAS (referencias adicionales)
+    // Productos Snoopy que también están en Joyería y accesorios
+    {
+      id: 61,
+      name: "(Snoopy & Woodstock)✨Pulsera para compartir",
+      price: "BOB 20.00",
+      image: "/placeholder.svg",
+      description: "Pulsera temática de Snoopy y Woodstock para compartir",
+      inStock: true,
+      rating: 5,
+      category: "snoopy",
+    },
+    {
+      id: 62,
+      name: "Aretes Snoopy 💝✨",
+      price: "BOB 15.00",
+      image: "/placeholder.svg",
+      description: "Aretes temáticos de Snoopy",
+      inStock: true,
+      rating: 5,
+      category: "snoopy",
+    },
+    // Tarjeta que aparece tanto en Tarjetas como en Snoopy
+    {
+      id: 63,
+      name: "Tarjeta mediana Snoopy 💞🫶",
+      price: "BOB 45.00",
+      image: "/set-tarjetas-tematicas.png",
+      description:
+        "Dibujos escaneados impresos •Tamaño Carpeta •Espacios para llenado •Tapa dura •Base Cartulina. *Tarjeta con contenido (con letra ) a 70 Bs*",
+      inStock: true,
+      rating: 5,
+      category: "tarjetas",
+    },
   ];
 
   const categories = [
@@ -328,28 +780,28 @@ export default function JukiCreacionesHome() {
       icon: Package,
     },
     {
-      id: "tarjetas-regalo",
-      name: "Tarjetas de Regalo",
-      description: "Tarjetas personalizadas únicas",
-      icon: Gift,
-    },
-    {
-      id: "libritos-canciones",
-      name: "Libritos con Canciones",
-      description: "Libritos artesanales con melodías",
-      icon: Music,
-    },
-    {
-      id: "flores-individuales",
-      name: "Flores Eternas Individuales",
-      description: "Flores decorativas individuales",
-      icon: Heart,
-    },
-    {
       id: "ramos-eternos",
       name: "Ramos Eternos",
       description: "Ramos que duran para siempre",
       icon: Heart,
+    },
+    {
+      id: "flores-individuales",
+      name: "Flores Individuales",
+      description: "Flores decorativas individuales",
+      icon: Heart,
+    },
+    {
+      id: "libritos-canciones",
+      name: "Libritos de Canciones",
+      description: "Libritos artesanales con melodías",
+      icon: Music,
+    },
+    {
+      id: "plantas-vs-zombies",
+      name: "Plantas vs Zombies",
+      description: "Productos temáticos del videojuego",
+      icon: Star,
     },
     {
       id: "productos-novedosos",
@@ -358,16 +810,40 @@ export default function JukiCreacionesHome() {
       icon: Star,
     },
     {
-      id: "accesorios-joyeria",
-      name: "Accesorios y Joyería",
+      id: "tarjetas",
+      name: "Tarjetas",
+      description: "Tarjetas personalizadas únicas",
+      icon: Gift,
+    },
+    {
+      id: "joyeria-accesorios",
+      name: "Joyería y Accesorios",
       description: "Complementos hechos a mano",
       icon: Star,
     },
     {
-      id: "productos-tematizados",
-      name: "Productos Tematizados",
-      description: "Productos de personajes y temas",
+      id: "sombreros-chinos",
+      name: "Sombreros Chinos",
+      description: "Sombreros tradicionales chinos",
       icon: Star,
+    },
+    {
+      id: "snoopy",
+      name: "Snoopy",
+      description: "Productos temáticos de Snoopy",
+      icon: Heart,
+    },
+    {
+      id: "tarjetas-con-movimiento",
+      name: "Tarjetas con Movimiento",
+      description: "Tarjetas interactivas especiales",
+      icon: Gift,
+    },
+    {
+      id: "cajas-tematizadas",
+      name: "Cajas Tematizadas",
+      description: "Cajas temáticas personalizadas",
+      icon: Gift,
     },
   ];
 
