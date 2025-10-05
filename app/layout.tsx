@@ -1,5 +1,5 @@
 import type React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     apple: "/images/juki-logo.png",
     shortcut: "/images/juki-logo.png",
   },
+};
+
+export const viewport: Viewport = {
   themeColor: "#e3ca6e",
 };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import type React from "react";
+import { Suspense } from "react";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -41,7 +42,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { useTheme } from "next-themes";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function JukiCreacionesHome() {
+function JukiCreacionesContent() {
   const { theme } = useTheme();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -1871,5 +1872,26 @@ export default function JukiCreacionesHome() {
         </div>
       </footer>
     </div>
+  );
+}
+
+// Loading component para el Suspense
+function Loading() {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#e3ca6e] mx-auto"></div>
+        <p className="mt-2 text-muted-foreground">Cargando...</p>
+      </div>
+    </div>
+  );
+}
+
+// Componente principal que envuelve el contenido en Suspense
+export default function JukiCreacionesHome() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <JukiCreacionesContent />
+    </Suspense>
   );
 }
