@@ -1275,31 +1275,37 @@ function JukiCreacionesContent() {
             backgroundImage: "url(/images/products-collage.png)",
           }}
         >
-          {/* Overlay suave para mejorar legibilidad sin ocultar mucho la imagen */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/50"></div>
+          {/* Overlay elegante */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/40"></div>
 
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-6xl mx-auto text-center">
+              {/* Título principal */}
+              <div className="space-y-8 mb-12">
+                <div className="space-y-4">
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
+                    Regalos que
+                    <span className="block text-[#e3ca6e] font-black">
+                      Enamoran
+                    </span>
+                  </h1>
+
+                  <p className="text-xl md:text-2xl lg:text-3xl text-white/90 font-medium max-w-4xl mx-auto leading-relaxed">
+                    Creaciones artesanales únicas desde La Paz, Bolivia.
+                    <br className="hidden md:block" />
+                    Ramos eternos, tarjetas personalizadas y detalles especiales
+                    hechos con amor.
+                  </p>
+                </div>
+              </div>
+
+              {/* Botones de acción */}
               <div className="space-y-6">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-black text-white leading-tight drop-shadow-2xl">
-                  Regalos Manuales
-                  <span className="text-[#e3ca6e] block drop-shadow-2xl">
-                    Personalizados
-                  </span>
-                </h1>
-                <p className="text-xl md:text-2xl text-white font-serif font-bold drop-shadow-lg">
-                  Porque cada detalle importa
-                </p>
-                <p className="text-lg md:text-xl text-white/95 leading-relaxed max-w-3xl mx-auto drop-shadow-lg">
-                  Desde La Paz, Bolivia, creamos ramos de flores eternas,
-                  tarjetas únicas y manualidades especiales hechas con amor y
-                  dedicación. Realizamos envíos a los 9 departamentos de Bolivia
-                  y artículos a pedido.
-                </p>
-                <div className="pt-8">
+                {/* Botón principal */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Button
                     size="lg"
-                    className="text-lg px-8 py-4 bg-[#e3ca6e] hover:bg-[#d4b84e] text-black font-bold shadow-2xl border-2 border-white/20"
+                    className="text-lg px-10 py-6 bg-[#e3ca6e] hover:bg-[#d4b84e] text-black font-bold shadow-2xl transition-all duration-300 hover:scale-105 border-0"
                     asChild
                   >
                     <Link
@@ -1307,82 +1313,65 @@ function JukiCreacionesContent() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <MessageCircle className="h-5 w-5 mr-2" />
-                      Ver Productos
+                      <MessageCircle className="h-6 w-6 mr-3" />
+                      Hacer Pedido Ahora
                     </Link>
                   </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
-      {currentView === "home" && (
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif font-black text-foreground mb-4">
-                ¿Qué estás buscando?
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explora nuestros productos disponibles o navega por todo nuestro
-                catálogo
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                <CardHeader className="text-center">
-                  <div className="mx-auto mb-4 p-4 bg-green-500/10 rounded-full w-fit">
-                    <ShoppingBag className="h-12 w-12 text-green-600" />
-                  </div>
-                  <CardTitle className="text-2xl">Productos en Stock</CardTitle>
-                  <CardDescription className="text-base">
-                    Ver productos disponibles organizados por categorías
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <Button
-                    size="lg"
-                    className="w-full gap-2"
-                    onClick={() => navigateToView("stock")}
-                  >
-                    <ShoppingBag className="h-5 w-5" />
-                    Ver Productos Disponibles
-                  </Button>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    {allProducts.filter((p) => p.inStock).length} productos
-                    disponibles
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                <CardHeader className="text-center">
-                  <div className="mx-auto mb-4 p-4 bg-primary/10 rounded-full w-fit">
-                    <Grid3X3 className="h-12 w-12 text-primary" />
-                  </div>
-                  <CardTitle className="text-2xl">Catálogo Completo</CardTitle>
-                  <CardDescription className="text-base">
-                    Explorar todas las categorías y productos
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="w-full gap-2 bg-transparent"
+                    className="text-lg px-10 py-6 border-2 border-white text-white hover:bg-white hover:text-black font-semibold transition-all duration-300 hover:scale-105 bg-transparent"
                     onClick={() => navigateToView("catalog")}
                   >
-                    <Grid3X3 className="h-5 w-5" />
-                    Ver Catálogo Completo
+                    <Eye className="h-6 w-6 mr-3" />
+                    Ver Catálogo
                   </Button>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    {categories.length - 1} categorías disponibles
+                </div>
+
+                {/* Botones secundarios */}
+                <div className="pt-8">
+                  <p className="text-white/80 text-lg mb-6 font-medium">
+                    Explora nuestros productos
                   </p>
-                </CardContent>
-              </Card>
+
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-3xl mx-auto">
+                    <Button
+                      size="lg"
+                      className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold backdrop-blur-md border border-white/30 transition-all duration-300"
+                      onClick={() => navigateToView("stock")}
+                    >
+                      <ShoppingBag className="h-5 w-5 mr-3" />
+                      Productos Disponibles
+                      <Badge className="ml-3 bg-green-600 hover:bg-green-700 text-white border-0">
+                        {allProducts.filter((p) => p.inStock).length}
+                      </Badge>
+                    </Button>
+
+                    <Button
+                      size="lg"
+                      className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold backdrop-blur-md border border-white/30 transition-all duration-300"
+                      onClick={() => navigateToView("catalog")}
+                    >
+                      <Grid3X3 className="h-5 w-5 mr-3" />
+                      Todas las Categorías
+                      <Badge
+                        variant="outline"
+                        className="ml-3 border-white/50 text-white hover:bg-white hover:text-black"
+                      >
+                        {categories.length - 1}
+                      </Badge>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Indicador de scroll */}
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+                  <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
